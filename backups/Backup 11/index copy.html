@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steven Casteel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar hidden">
+        <div class="navbar-head-container">
+            <img src="assets/head_open.png" alt="Home" class="navbar-head-image">
+            <img src="assets/head_closed.png" alt="Home Closed" class="navbar-head-image navbar-head-closed">
+            <div class="navbar-sparkles"></div>
+        </div>
+        <ul>
+            <li><a href="#anime-ai">Anime Book</a></li>
+            <li><a href="#elf-girls">Elf Girls</a></li>
+            <li class="dropdown">
+                <a href="#about">About Me</a>
+                <ul class="dropdown-content">
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#occult">Occult</a></li>
+                    <li><a href="#video-games">Video Games</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <div id="head-container">
+            <div id="sparkles"></div>
+            <img src="assets/head_open.png" alt="Interactive head" id="head-enter-site">
+        </div>
+
+        <div id="content" class="hidden">
+            <section id="home" class="section">
+                <div id="book-container">
+                    <img src="book_spine_transparent_1000px.png" alt="Book Spine" id="book-image">
+                </div>
+                <h1>Welcome!</h1>
+                <p>Book Sales: 0</p>
+                <p>Elf Girl Sales: 0</p>
+                <p>Homeless: <span id="days-counter"></span> days</p>
+            </section>
+
+            <section id="anime-ai" class="section hidden">
+                <h2>Anime Book</h2>
+                <p>75 Essays on anime classics.</p>
+                <p>2000+ One-Sentence Summaries of many others.</p>
+            </section>
+
+            <section id="elf-girls" class="section hidden">
+                <div id="elf-girl-container">
+                    <video id="elf-girl-video" loop muted>
+                        Your browser does not support the video tag.
+                    </video>
+                    <button id="fullscreen-btn">⛶</button>
+                </div>
+                <h2>Free Download or Buy a Print</h2>
+                <p>Art's meant to be <a href="https://www.deviantart.com/stevencasteel/gallery/92813799/elf-girls"
+                        target="_blank">shared at full resolution</a>, not watermarked and reduced to a thumbnail to
+                    thwart so-called thieves. That's a fear-based mindset. Not my style. Neither is siccing violent
+                    government goons after people for infringing copyright!</p>
+                <p>Feel free to slap these Elf Girls on hoodies, stickers, or whatever you dream up. They're all
+                    dedicated to the Public Domain with a CC0 license -- meaning no strings attached for personal or
+                    commercial use.</p>
+                <p>I spent a big chunk of June generating and cherry picking the best portraits out of thousands.
+                    They're mostly cleaned up and ready to go save for some eye repairs and other fine details. It also
+                    takes a considerable amount of time to make product listings, mockups, animations, and upload
+                    everywhere. I'm doing so in batches of three alongside the <a
+                        href="https://www.youtube.com/@stevencasteel/videos" target="_blank">one-sentence summary anime
+                        videos</a>. Rinse and repeat until I'm not homeless anymore.</p>
+                <div class="icon-container">
+                    <a href="https://stevencasteel.etsy.com" target="_blank"><img
+                            src="assets/logo_Etsy_full-text_250px.jpg" alt="Etsy" class="icon"></a>
+                    <a href="https://archive.org/details/elf-girls" target="_blank"><img
+                            src="assets/logo_Internet-Archive__full-text_250px.jpg" alt="Internet Archive - Elf Girls"
+                            class="icon"></a>
+                    <a href="https://www.goodreads.com/book/show/213997535-anime" target="_blank"><img
+                            src="assets/logo_Goodreads_full-text_250px.jpg" alt="Goodreads" class="icon"></a>
+                </div>
+            </section>
+
+            <section id="about" class="section hidden">
+                <h2>About Me</h2>
+                <p>Over time, my home-base is gonna get a Myspace-like man-cave treatment using visual multimedia design
+                    to showcase my taste in all the best stuff.</p>
+                <p>As it gets fleshed out, and AI helps me beautify everything, I'll make the transition to a kick-butt
+                    VR hangout space. Think the bedroom from Hey Arnold, but in the Metaverse, or whatever it ends up
+                    being called.</p>
+                <div class="icon-container">
+                    <a href="https://www.audible.com/pd//B0D847L6G5" target="_blank"><img
+                            src="assets/logo_Audible_full-text_250px.jpg" alt="Audible" class="icon"></a>
+                    <a href="https://a.co/d/3VrAuVG" target="_blank"><img src="assets/logo_Amazon_full-text_250px.jpg"
+                            alt="Amazon" class="icon"></a>
+                    <a href="https://stevencasteel.etsy.com" target="_blank"><img
+                            src="assets/logo_Etsy_full-text_250px.jpg" alt="Etsy" class="icon"></a>
+                    <a href="https://archive.org/details/@stevencasteel" target="_blank"><img
+                            src="assets/logo_Internet-Archive__full-text_250px.jpg" alt="Internet Archive"
+                            class="icon"></a>
+                    <a href="https://www.goodreads.com/book/show/213997535-anime" target="_blank"><img
+                            src="assets/logo_Goodreads_full-text_250px.jpg" alt="Goodreads" class="icon"></a>
+                </div>
+            </section>
+
+            <section id="contact" class="section hidden">
+                <h2>Contact</h2>
+                <p>Email: contact@stevencasteel.com</p>
+            </section>
+
+            <section id="occult" class="section hidden">
+                <h2>Occult</h2>
+                <p>Explore the mysterious world of the occult and its influence on culture and art.</p>
+                <p>Discover the hidden symbolism and ancient practices that continue to fascinate people today.</p>
+            </section>
+
+            <section id="video-games" class="section hidden">
+                <h2>Video Games</h2>
+                <p>Dive into the exciting realm of video games and their impact on modern entertainment.</p>
+                <p>From retro classics to cutting-edge VR experiences, explore the diverse world of gaming.</p>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
