@@ -160,6 +160,7 @@ body {
     display: flex;
     justify-content: center;
     padding-left: 200px;
+    /* Match navbar width */
 }
 
 main {
@@ -180,6 +181,7 @@ main {
     position: absolute;
     top: 50%;
     left: calc(50% - 100px);
+    /* Adjust this value to move the head left */
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
@@ -337,7 +339,7 @@ a:hover {
     position: relative;
     width: 100%;
     max-width: 800px;
-    margin: 0 auto 20px;
+    margin: 0 auto;
 }
 
 #elf-girl-video {
@@ -451,6 +453,7 @@ a:hover {
         height: auto;
         aspect-ratio: 1 / 1;
         left: 50%;
+        /* Reset the left value for mobile */
     }
 
     .dropdown-content {

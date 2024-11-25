@@ -52,6 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (targetSection) {
             targetSection.classList.remove('hidden');
         }
+        if (sectionId === 'elf-girls') {
+            loadRandomElfGirlVideo();
+        }
     }
 
     function resetNavbarActive() {
@@ -78,18 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         elfGirlVideo.src = videoSrc;
         elfGirlVideo.load();
-        playVideo();
-    }
-
-    function playVideo() {
         elfGirlVideo.play().catch(error => {
             console.error('Error playing video:', error);
-            // Fallback for Safari: use a poster image
-            if (error.name === 'NotSupportedError') {
-                const posterSrc = `assets/animations/00${Math.floor(Math.random() * 9) + 1}-1_poster.jpg`;
-                elfGirlVideo.poster = posterSrc;
-                elfGirlVideo.style.display = 'block';
-            }
         });
     }
 
@@ -113,7 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     navbar.classList.remove('hidden');
                     navbar.classList.add('visible');
                     showSection('home');
-                    loadRandomElfGirlVideo();
                 }, 300);
             }, 200);
         }
@@ -166,7 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
     navbarHeadContainer.addEventListener('click', () => {
         showSection('home');
         resetNavbarActive();
-        loadRandomElfGirlVideo();
     });
 
     const eventDate = new Date(2023, 3, 10);
@@ -201,14 +192,4 @@ document.addEventListener('DOMContentLoaded', () => {
     bookImage.addEventListener('click', () => {
         window.open('https://a.co/d/3VrAuVG', '_blank');
     });
-
-    // Ensure loop for Safari
-    elfGirlVideo.loop = true;
-    elfGirlVideo.addEventListener('ended', () => {
-        elfGirlVideo.currentTime = 0;
-        elfGirlVideo.play();
-    });
-
-    // Initial load of random Elf Girl video
-    loadRandomElfGirlVideo();
 });

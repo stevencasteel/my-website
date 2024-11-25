@@ -202,13 +202,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.open('https://a.co/d/3VrAuVG', '_blank');
     });
 
-    // Ensure loop for Safari
-    elfGirlVideo.loop = true;
-    elfGirlVideo.addEventListener('ended', () => {
-        elfGirlVideo.currentTime = 0;
-        elfGirlVideo.play();
-    });
-
     // Initial load of random Elf Girl video
     loadRandomElfGirlVideo();
 });
