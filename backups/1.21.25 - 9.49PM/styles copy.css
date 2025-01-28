@@ -10,8 +10,7 @@
 }
 
 body {
-    font-family: 'M PLUS Rounded 1c', Arial, sans-serif;
-    font-weight: 700;
+    font-family: Arial, sans-serif;
     background-color: var(--color-primary);
     color: var(--color-white);
     margin: 0;
@@ -28,62 +27,25 @@ img {
     display: block;
 }
 
-/* Purple BANNER */
-.purple-banner {
+/* RED BANNER */
+.red-banner {
     background-color: var(--color-accent);
     width: 100%;
     overflow: hidden;
     position: relative;
 }
 
-/* New styles for gradient overlay */
-.purple-banner-content {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.purple-banner-content::before,
-.purple-banner-content::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-    /* Adjust the width of the fade as needed */
-    z-index: 2;
-}
-
-.purple-banner-content::before {
-    left: 0;
-    background: linear-gradient(to right, var(--color-accent), transparent);
-}
-
-.purple-banner-content::after {
-    right: 0;
-    background: linear-gradient(to left, var(--color-accent), transparent);
-}
-
 .scrolling-text {
-    font-family: 'M PLUS Rounded 1c', Arial, sans-serif;
-    font-weight: 800;
     color: var(--color-white);
     white-space: nowrap;
-    animation: scrollText 200s linear infinite;
-    padding: 0px 0;
-    font-size: 15px;
-    position: relative;
-    z-index: 1;
+    animation: scrollText 40s linear infinite;
+    padding: 10px 0;
+    font-size: 14px;
 }
 
 @keyframes scrollText {
-    0% {
-        transform: translateX(100%);
-    }
-
-    100% {
-        transform: translateX(-700%);
-    }
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
 }
 
 /* CONTACT AND SOCIAL LINKS */
@@ -106,9 +68,6 @@ img {
 
 .contact-info {
     width: 40%;
-    min-width: 200px;
-    height: auto;
-    object-fit: contain;
 }
 
 .steven-head {
@@ -135,8 +94,7 @@ img {
 }
 
 .social-icon-link {
-    flex: 1 0 calc(25% - 10px);
-    /* 4 items per row with gap */
+    flex: 1 0 calc(25% - 10px); /* 4 items per row with gap */
     display: flex;
     justify-content: center;
 }
@@ -151,8 +109,7 @@ img {
 
 .social-icon:hover {
     transform: scale(1.07);
-    box-shadow: 0 0 18px rgba(112, 251, 112, 0.7);
-    /* Updated glow color */
+    box-shadow: 0 0 18px rgba(112, 251, 112, 0.7); /* Updated glow color */
 }
 
 /* FULL WIDTH IMAGE */
@@ -190,17 +147,6 @@ img {
     flex-shrink: 1;
 }
 
-.video-game-music .download-link {
-    flex-shrink: 0;
-}
-
-.video-game-music .download-button {
-    width: auto;
-    min-width: 250px;
-    height: 428px;
-    object-fit: contain;
-}
-
 .download-button {
     display: flex;
     align-items: center;
@@ -209,6 +155,7 @@ img {
     height: auto;
     padding: 5px;
     margin: 0;
+    flex-shrink: 0;
 }
 
 .download-link:hover .download-button {
@@ -255,31 +202,23 @@ img {
 
 /* DOWNLOAD SECTION */
 .download-section {
-    padding: 20px 20px 0 20px;
+    padding: 20px;
     text-align: center;
     display: flex;
     justify-content: center;
-    position: relative;
 }
 
 .download-elf-albums {
     transition: transform 0.3s ease;
-    width: 400px;
-    height: auto;
+    width: 750px;
 }
 
-/* For centering the new button container */
-.download-section .button-container {
-    position: relative;
-    width: 400px;
-    height: auto;
-    margin: 0 auto;
+.download-section:hover .download-elf-albums {
+    transform: translateY(-4px);
 }
 
-.download-elf-albums img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.download-section:active .download-elf-albums {
+    transform: translateY(4px);
 }
 
 /* ANIME ACCORDING TO AI IMAGE */
@@ -289,7 +228,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 0 50px 0;
+    padding: 50px 0;
 }
 
 /* DOWNLOAD LINKS */
@@ -304,49 +243,36 @@ img {
 }
 
 .download-link {
+    transition: transform 0.3s ease;
     position: relative;
     width: 250px;
-    display: block;
-}
-
-/* Container to maintain consistent size */
-.button-container {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 171%;
 }
 
 .download-button {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    transition: opacity 0.3s ease;
-    object-fit: contain;
+    height: auto;
+    position: relative;
+    z-index: 2;
 }
 
 .download-hover {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    z-index: 1;
     opacity: 0;
     transition: opacity 0.3s ease;
-    object-fit: contain;
-}
-
-.download-link:hover .download-button:not(.download-hover) {
-    opacity: 0;
 }
 
 .download-link:hover .download-hover {
     opacity: 1;
 }
 
-.download-link:active {
+.download-link:hover .download-button {
+    opacity: 0;
+}
+
+.download-link:active .download-button {
     transform: translateY(4px);
 }
 
@@ -444,7 +370,6 @@ img {
 
     .contact-info {
         width: 80%;
-        max-width: 400px;
     }
 
     .steven-head {
@@ -455,97 +380,79 @@ img {
         width: 80%;
         justify-content: space-around;
     }
-
-    .social-icon-link {
-        flex: 1 0 calc(50% - 20px);
-        /* 2 items per row with gap */
+     .social-icon-link {
+        flex: 1 0 calc(50% - 20px); /* 2 items per row with gap */
     }
-
     .video-grid {
-        grid-template-columns: 1fr;
-        /* Single column layout */
+        grid-template-columns: 1fr; /* Single column layout */
         gap: 20px;
     }
 
     .book-links {
         flex-direction: column;
-            gap: 20px;
-        }
-        
-        .book-image {
-            max-width: 80%;
-        }
-        
-        .store-links {
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .personal-photos img {
-            max-width: 80%;
-        }
-        
-        .video-game-music .content-wrapper {
-            flex-direction: column;
-        }
-        
-        .video-game-music .download-button {
-            width: 250px;
-            /* Override the 80% width */
-            height: 428px;
-        }
-        
-        .video-grid iframe:nth-child(9) {
-            grid-column: span: 1;
-        }
-        
-        .video-grid-container {
-            grid-template-columns: 1fr;
-            /* Single column layout */
-            gap: 20px;
-        }
-        
-        .video-grid-container iframe {
-            max-width: 80vw;
-            margin: 0 auto;
-        }
-        
-        /* Responsive Elf Girl Albums button */
-        .download-elf-albums {
-            width: 80%;
-            max-width: 400px;
-        }
-        
-        .download-section .button-container {
-            width: 100%;
-        }
-        }
-        
-        /* Mobile */
-        @media (max-width: var(--breakpoint-tablet)) {
-            .social-links {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-            }
-        
-            .social-icon-link {
-                flex: 1 0 calc(50% - 10px);
-                /* 2 items per row with gap */
-            }
-        
-            .video-grid iframe {
-                width: 100%;
-            }
-        
-            .store-links {
-                flex-direction: column;
-                align-items: center;
-            }
-        
-            .video-game-music .content-wrapper {
-                gap: 40px;
-            }
-        }
+        gap: 20px;
+    }
+
+    .book-image {
+        max-width: 80%;
+    }
+
+    .store-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .personal-photos img {
+        max-width: 80%;
+    }
+    .video-game-music .content-wrapper {
+        flex-direction: column;
+    }
+    .download-button {
+        width: 80%;
+    }
+    .video-grid iframe:nth-child(9) {
+        grid-column: span 1;
+    }
+    .video-grid-container {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 20px;
+    }
+    .video-grid-container iframe {
+        max-width: 80vw;
+        margin: 0 auto;
+    }
+    .download-elf-albums {
+        width: 80%;
+    }
+}
+
+/* Mobile */
+@media (max-width: var(--breakpoint-tablet)) {
+    .social-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .social-icon-link {
+        flex: 1 0 calc(50% - 10px); /* 2 items per row with gap */
+    }
+
+    .video-grid iframe {
+        width: 100%;
+    }
+
+    .store-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .download-elf-albums {
+        width: 100%;
+    }
+    .video-game-music .content-wrapper {
+        gap: 40px;
+    }
+}

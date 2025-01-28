@@ -1,0 +1,435 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1B1B1B;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 2. Red Banner */
+.red-banner {
+    background-color: #800;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    /* Add position relative */
+}
+
+.scrolling-text {
+    color: white;
+    white-space: nowrap;
+    animation: scrollText 20s linear infinite;
+}
+
+/* Add fade effect to red banner */
+.red-banner::before,
+.red-banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+}
+
+.red-banner::before {
+    left: 0;
+    background: linear-gradient(to right, #800, rgba(128, 0, 0, 0));
+}
+
+.red-banner::after {
+    right: 0;
+    background: linear-gradient(to left, #800, rgba(128, 0, 0, 0));
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* 3. Contact and Social Links */
+.contact-section {
+    background-color: #1B1B1B;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.contact-info {
+    max-width: 350px;
+    width: 35%;
+}
+
+.steven-head {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    max-width: 300px;
+    width: 25%;
+}
+
+.steven-head:hover {
+    content: url('assets/head_closed.png');
+}
+
+.steven-head:active {
+    transform: translateY(4px);
+}
+
+.social-carousel {
+    overflow: hidden;
+    position: relative;
+    width: 35%;
+}
+
+.carousel-track {
+    display: flex;
+    width: fit-content;
+    transition: transform 0.5s ease-in-out;
+}
+
+.social-icon {
+    width: 75px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.5);
+}
+
+/* Add fade effect to social carousel */
+.social-carousel::before,
+.social-carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    z-index: 2;
+}
+
+.social-carousel::before {
+    left: 0;
+    background: linear-gradient(to right, #1B1B1B, rgba(27, 27, 27, 0));
+}
+
+.social-carousel::after {
+    right: 0;
+    background: linear-gradient(to left, #1B1B1B, rgba(27, 27, 27, 0));
+}
+
+/* 4. Full Width Image */
+.full-width-image {
+    width: 100%;
+    display: flex;
+}
+
+.full-width-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* 5. Video Game Music Section */
+.video-game-music {
+    background-color: #03D7F0;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-game-music .content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.section-title {
+    margin: 0 auto 20px auto;
+    width: fit-content;
+}
+
+.video-game-music iframe {
+    /* Responsive iframe */
+    max-width: 100%;
+}
+
+.download-button {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+.download-link:hover .download-button {
+    transform: translateY(-4px);
+}
+
+.download-link:active .download-button {
+    transform: translateY(4px);
+}
+
+/* 6. Vertical Elf Girl Banner */
+/* Same styles as .full-width-image */
+
+/* 7. Elf Girl Video Section */
+.elf-girl-video-section {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+/* 8. Video Carousel Section */
+.video-carousel-section {
+    padding: 20px;
+}
+
+.video-carousel {
+    overflow: hidden;
+    position: relative;
+}
+
+.video-carousel .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    flex-wrap: wrap;
+}
+
+.video-carousel iframe {
+    width: 560px;
+    /* Adjust as needed */
+    height: 315px;
+    /* Adjust as needed */
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/* Add fade effect to video carousel */
+.video-carousel::before,
+.video-carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50px;
+    /* Adjust fade width as needed */
+    height: 100%;
+    z-index: 2;
+}
+
+.video-carousel::before {
+    left: 0;
+    background: linear-gradient(to right, #1B1B1B, rgba(27, 27, 27, 0));
+}
+
+.video-carousel::after {
+    right: 0;
+    background: linear-gradient(to left, #1B1B1B, rgba(27, 27, 27, 0));
+}
+
+/* 9. Download Section */
+.download-section {
+    padding: 20px;
+    text-align: center;
+}
+
+/* 10. Anime According to AI Image */
+.anime-according-to-ai-section {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+/* 11. Download Links */
+.download-links {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.download-link {
+    transition: transform 0.3s ease;
+    margin: 10px;
+}
+
+.download-link:hover .download-button {
+    transform: translateY(-4px);
+}
+
+.download-link:active .download-button {
+    transform: translateY(4px);
+}
+
+/* 12. Book Links */
+.book-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.book-image-link {
+    transition: transform 0.3s ease;
+}
+
+.book-image-link:hover .book-image {
+    transform: translateY(-4px);
+}
+
+.book-image-link:active .book-image {
+    transform: translateY(4px);
+}
+
+.book-image {
+    /* Style for the book image */
+    max-width: 400px;
+    height: auto;
+}
+
+.store-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.store-icon {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.store-icon:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.5);
+}
+
+/* 13. Anime According to AI Videos Carousel */
+/* Same styles as .video-carousel-section */
+
+/* 14. Personal Photos */
+.personal-photos {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.personal-photos img {
+    max-width: 45%;
+    height: auto;
+    margin: 10px;
+}
+
+.rectangle-image {
+    max-width: 45%;
+    height: auto;
+}
+
+/* 15. Site Bottom Text */
+.site-bottom {
+    padding: 20px;
+    text-align: center;
+}
+
+.site-bottom-text {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .video-game-music .content-wrapper {
+        flex-direction: column;
+        gap: 20px;
+        width: 90%;
+    }
+
+    .video-carousel iframe {
+        width: 90vw;
+        /* Adjust as needed */
+        height: calc(0.5625 * 90vw);
+        /* Adjust as needed */
+        margin-right: 10px;
+    }
+
+    .download-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book-links {
+        flex-direction: column;
+    }
+
+    .personal-photos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .personal-photos img {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .contact-info {
+        max-width: 250px;
+    }
+
+    .steven-head {
+        max-width: 200px;
+    }
+
+}
+
+@media (max-width: 800px) {
+    .contact-info {
+        max-width: 200px;
+    }
+
+    .steven-head {
+        max-width: 150px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+}

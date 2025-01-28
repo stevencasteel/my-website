@@ -62,6 +62,6 @@ const iframeObserver = new IntersectionObserver((entries, observer) => {
 });
 
 // Select all iframes and observe them
-document.querySelectorAll('.video-carousel iframe, .video-grid iframe, .video-grid-container iframe').forEach(iframe => {
+document.querySelectorAll('.video-carousel iframe, .video-grid iframe').forEach(iframe => {
     iframeObserver.observe(iframe);
 });
