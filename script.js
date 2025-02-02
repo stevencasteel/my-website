@@ -39,8 +39,28 @@ function loadRandomElfGirlVideo() {
     const randomIndex = Math.floor(Math.random() * videos.length);
     const selectedVideo = videos[randomIndex];
     const videoSrc = `assets/animations/${selectedVideo}`;
+
+    // Set source and load
     elfGirlVideo.src = videoSrc;
     elfGirlVideo.load();
+
+    // Remove any existing ended listeners
+    elfGirlVideo.removeEventListener('ended', handleVideoEnd);
+
+    // Add new ended listener
+    elfGirlVideo.addEventListener('ended', handleVideoEnd);
+
+    // Start playing
+    elfGirlVideo.play();
+}
+
+function handleVideoEnd() {
+    // Reset the video source to force a fresh playback
+    const currentSrc = this.src;
+    this.src = '';
+    this.src = currentSrc;
+    this.load();
+    this.play();
 }
 
 // Initialize the video when the page loads
